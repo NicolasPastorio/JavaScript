@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<meta http-equiv="X-UA-Compatible" content="ie=edge">
+		<title>Quadrado</title>
+		<style>
+			body{
+				font: normal 15pt Arial;
+			}
+			input{
+				font: normal 15pt Arial;
+				width: 100px;
+			}
+			div#resposta{
+				display: inline;
+				margin-top: 20px;
+				background: rgb(42,191,42);
+				padding: 5px;
+				margin-left: 15px;
+				border-radius: 5px;
+			}
+		</style>
+	</head>
+	<body>
+		<h1>Quadrado</h1>
+		<input type="number" name="txtn1" id="num1">
+		<input type="button" value="Quadrado" onclick="somar()">
+		<div id="resposta">Resultado</div>
+
+		<!-- <h1>Quadrado do Valor informado</h1>
+		<input type="number" name="txtn1" id="num1">
+		<input type="button" value="Somar" onclick="somar()">
+		<div id="resposta">Resultado</div> -->
+		<script>
+			function somar(){
+				var num1 = window.document.getElementById('num1')
+				var resposta = window.document.getElementById('resposta')
+				var numero1 = Number(num1.value)
+				var quadrado = numero1*numero1
+				resposta.innerHTML = `O quadrado de ${numero1} é <strong>${quadrado}</strong>!` 
+			}
+		</script>
+	</body>
+</html>
