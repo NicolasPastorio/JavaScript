@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+	<html lang="en">
+	<head>
+		<meta charset="UTF-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<meta http-equiv="X-UA-Compatible" content="ie-edge">
+		<title>Multas</title>
+	</head>
+	<body>
+		<h1>Sistema de Multas</h1>
+		Velocidade do carro: 
+		<input type="number" name="txtvel" id="txtvel">
+		Km/h
+		<input type="button" value="verificar" onclick="calcular()">
+		<div id="res">Resultado</div>
+		<script>
+			function calcular(){
+				var txtv = window.document.querySelector('input#txtvel')
+				var res = window.document.querySelector('div#res')
+				var vel = Number(txtv.value)
+				// res.innerHTML = `<p>Sua velocidade atual é de <strong>${vel}Km/h</strong></p>`
+				if(vel > 0 && vel <= 80){
+					res.innerHTML = `<p>Sua velocidade atual é de <strong>${vel}Km/h</strong></p>`
+					res.innerHTML += `<p>Dirija sempre com cinto de segurança!</p>`
+				}else if(vel > 80 && vel < 329){
+					res.innerHTML = `<p>Sua velocidade atual é de <strong>${vel}Km/h</strong></p>`
+					res.innerHTML += `<p>Você foi <strong>MULTADO</strong> por excesso de velocidade</p>`
+				}else if(vel >= 329){
+					res.innerHTML = `<p>Não foi possível detectar a sua velocidade!</p><p>Você será <strong>INVESTIGADO!</strong></p>`
+				}else if(vel == 0){
+					res.innerHTML = `<p>O veículo está <strong>PARADO</strong>!</p><p>Por favor, não fique parado na pista!</p>`
+				}else if(vel < 0){
+					res.innerHTML = `<p>O valor informado para a velocidade é <strong>INVÁLIDO</strong>!</p>`
+				}
+				// res.innerHTML += `<p>Dirija sempre com cinto de segurança!</p>` 
+			}
+		</script>
+	</body>
+</html>
